@@ -1,0 +1,19 @@
+{
+  "name": "For Big Vinci — A Birthday Story",
+  "short_name": "Big Vinci",
+  "description": "A birthday tribute to Big Vinci — and the walk that opened a door.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "id": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#15130f",
+  "theme_color": "#15130f",
+  "icons": [
+    {"src": "icons/any-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/any-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
+    {"src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"},
+    {"src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+  ]
+}

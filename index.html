@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#15130f">
+<meta name="color-scheme" content="dark">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Big Vinci">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preload" href="fonts/dm-sans-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/hero.webp" as="image" fetchpriority="high">
+<meta name="description" content="A birthday tribute to Big Vinci — and the walk that opened a door.">
+<title>For Big Vinci — A Birthday Story</title>
+<style>
+@font-face{font-family:"Playfair Display";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/playfair-display-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Playfair Display";font-style:italic;font-weight:500;font-display:swap;src:url(fonts/playfair-display-500-italic.woff2) format("woff2")}
+@font-face{font-family:"Playfair Display";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/playfair-display-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Playfair Display";font-style:italic;font-weight:600;font-display:swap;src:url(fonts/playfair-display-600-italic.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/dm-sans-400-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/dm-sans-500-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/dm-sans-600-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Sans";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/dm-sans-700-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Mono";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/dm-mono-400-normal.woff2) format("woff2")}
+@font-face{font-family:"DM Mono";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/dm-mono-500-normal.woff2) format("woff2")}
+:root{--ink:#15130f;--paper:#f7f2e9;--muted:#bdb5a8;--orange:#f47b20;--line:rgba(247,242,233,.17);--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;--mono:"DM Mono",monospace;--page:min(1120px, calc(100% - 48px));}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{margin:0;background:var(--ink);color:var(--paper);font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+.site-nav{position:sticky;top:0;z-index:20;background:rgba(21,19,15,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{width:var(--page);min-height:68px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:700;letter-spacing:-.04em;text-decoration:none;font-size:1.04rem;white-space:nowrap}.brand span{color:var(--orange)}
+.nav-links{display:flex;align-items:center;gap:clamp(14px,2.8vw,32px)}
+.nav-links a{font: .68rem var(--mono);text-transform:uppercase;letter-spacing:.09em;text-decoration:none;color:#d6cfc4;transition:color .2s}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{border:1px solid rgba(244,123,32,.6);padding:10px 14px;border-radius:99px;color:var(--paper)!important}
+.wrap{width:var(--page);margin-inline:auto}
+.kicker{display:flex;align-items:center;gap:10px;font: .68rem var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--orange)}
+.kicker:before{content:"";width:24px;height:1px;background:var(--orange)}
+.hero{min-height:min(800px,calc(100svh - 68px));display:grid;align-items:center;position:relative;isolation:isolate;padding:70px 0 82px;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 72% 38%,rgba(244,123,32,.16),transparent 36%),linear-gradient(120deg,#15130f 10%,#211b14 100%)}
+.hero:after{content:"BV";position:absolute;z-index:-1;right:-.03em;bottom:-.26em;font-size:clamp(16rem,38vw,38rem);line-height:1;font-weight:700;letter-spacing:-.13em;color:rgba(247,242,233,.025);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.8fr);gap:clamp(34px,7vw,100px);align-items:center}
+.hero-copy{position:relative;z-index:2}
+.hero h1{font-size:clamp(3.5rem,9.3vw,8.6rem);letter-spacing:-.085em;line-height:.86;margin:24px 0 26px;font-weight:700;max-width:780px}
+.hero h1 em{font-family:var(--serif);font-weight:500;color:var(--orange);letter-spacing:-.07em}
+.hero-lede{max-width:460px;font-size:clamp(1rem,1.7vw,1.18rem);line-height:1.75;color:#d0c7bb}
+.actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:13px 18px;border-radius:99px;text-decoration:none;font-weight:700;font-size:.86rem;border:1px solid transparent;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--orange);color:#1a130d}.btn-ghost{border-color:var(--line);color:var(--paper)}
+.hero-photo{position:relative;justify-self:end;width:min(100%,420px);margin:0 4% 0 0}
+.hero-photo:before{content:"";position:absolute;inset:16px -16px -16px 16px;border:1px solid rgba(244,123,32,.65);border-radius:220px 220px 12px 12px}
+.hero-photo img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 18%;border-radius:220px 220px 12px 12px;filter:saturate(.88)}
+.photo-note{position:absolute;left:-36px;bottom:28px;background:var(--paper);color:var(--ink);padding:13px 16px;max-width:190px;box-shadow:0 10px 35px #0005}
+.photo-note small{font: .61rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#7e4a23;display:block;margin-bottom:5px}
+.photo-note strong{font:italic 1rem var(--serif)}
+.scroll-note{position:absolute;bottom:25px;left:max(24px,calc((100% - 1120px)/2));font: .62rem var(--mono);text-transform:uppercase;letter-spacing:.14em;color:#8f877c}
+.section{padding:clamp(76px,11vw,140px) 0}
+.section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:35px;align-items:start;margin-bottom:48px}
+.section-label{font: .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--orange);padding-top:12px}
+h2{font-size:clamp(2.4rem,6vw,5.8rem);letter-spacing:-.075em;line-height:.95;margin:0;font-weight:600}
+h2 em{font-family:var(--serif);font-weight:500}
+.story{background:var(--paper);color:var(--ink)}
+.story .section-label{color:#b75a17}
+.story-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(30px,8vw,110px);align-items:start}
+.story-big{font:italic clamp(2rem,4.5vw,4.3rem)/1.12 var(--serif);letter-spacing:-.045em;margin:0}
+.story-text{font-size:1.04rem;line-height:1.9;color:#51483f}
+.story-text p{margin:0 0 20px}
+.pullquote{border-left:3px solid var(--orange);padding:4px 0 4px 20px;font:italic clamp(1.3rem,2.5vw,2rem)/1.35 var(--serif);margin:34px 0 0}
+.timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:56px}
+.moment{border:1px solid #ded5c8;padding:23px;min-height:185px;display:flex;flex-direction:column;justify-content:space-between}
+.moment .num{font: .68rem var(--mono);color:#b75a17}
+.moment h3{font-size:1.22rem;letter-spacing:-.04em;margin:22px 0 8px}
+.moment p{font-size:.9rem;line-height:1.65;color:#645a50;margin:0}
+.impact{background:#201b15;position:relative;overflow:hidden}
+.impact:after{content:"";position:absolute;width:340px;height:340px;border:1px solid rgba(244,123,32,.2);border-radius:50%;right:-180px;top:80px;box-shadow:0 0 0 45px rgba(244,123,32,.025),0 0 0 90px rgba(244,123,32,.02);pointer-events:none}
+.impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,7vw,90px);align-items:center}
+.impact-photo{position:relative;max-width:470px}
+.impact-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 25%;border-radius:4px}
+.impact-photo:after{content:"";position:absolute;inset:12px -12px -12px 12px;border:1px solid var(--orange);z-index:0;pointer-events:none}
+.impact-copy{position:relative;z-index:1}
+.impact-copy h2{margin:20px 0 26px}
+.impact-copy p{color:#c9c0b4;line-height:1.85;font-size:1.02rem}
+.impact-statement{font:italic clamp(1.55rem,3vw,2.6rem)/1.25 var(--serif);color:var(--paper)!important;margin-top:32px}
+.gallery{background:#f0e8dc;color:var(--ink)}
+.gallery .section-label{color:#b75a17}
+.gallery-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:42px}
+.gallery-head p{max-width:330px;line-height:1.7;color:#645a50;margin:0}
+.gallery-grid{display:grid;grid-template-columns:1.05fr .85fr .85fr;gap:14px;align-items:start}
+.gallery-card{margin:0;min-width:0}
+.gallery-card:nth-child(2){margin-top:48px}
+.gallery-card:nth-child(3){margin-top:96px}
+.gallery-card img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top}
+.gallery-card:nth-child(2) img{aspect-ratio:3/4}
+.gallery-card:nth-child(3) img{aspect-ratio:3/4}
+.gallery-card figcaption{padding-top:12px;font: .65rem var(--mono);letter-spacing:.09em;text-transform:uppercase;color:#6e6256}
+.birthday{padding:clamp(86px,13vw,160px) 0;text-align:center;position:relative;overflow:hidden}
+.birthday:before{content:"";position:absolute;width:clamp(240px,45vw,600px);aspect-ratio:1;border:1px solid rgba(244,123,32,.2);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 40px rgba(244,123,32,.025),0 0 0 80px rgba(244,123,32,.02);pointer-events:none}
+.birthday-inner{position:relative;max-width:780px;margin:auto}
+.birthday h2{font-size:clamp(3.2rem,10vw,8rem);margin:25px 0}
+.birthday h2 span{color:var(--orange);font-family:var(--serif);font-style:italic;font-weight:500}
+.birthday p{max-width:570px;margin:0 auto;color:#c9c0b4;line-height:1.9;font-size:1.05rem}
+.signature{font:italic 1.6rem var(--serif);color:var(--orange);margin-top:28px!important}
+.surprise{background:var(--orange);color:#1a130d;padding:clamp(45px,8vw,92px) 0}
+.surprise-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.surprise .section-label{color:#5b2d0f}
+.surprise h2{font-size:clamp(2.6rem,6.5vw,6rem)}
+.surprise p{line-height:1.8;max-width:570px;color:#48280f}
+.surprise .btn{background:var(--ink);color:var(--paper);justify-self:end;white-space:normal;text-align:center}
+footer{padding:26px 0;color:#8e867a;font: .64rem var(--mono);letter-spacing:.07em;text-transform:uppercase}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+.footer-inner strong{color:var(--paper);font-family:var(--sans);letter-spacing:0;text-transform:none}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.is-visible{opacity:1;transform:none}
+@media(max-width:760px){
+ .hero .actions{flex-wrap:nowrap;gap:10px;width:100%}
+ .hero .actions .btn{flex:1 1 0;min-width:0;padding:12px 10px;gap:8px;font-size:clamp(.74rem,3.3vw,.86rem);white-space:nowrap;text-align:center}
+}
+@media(max-width:360px){
+ .hero .actions{gap:8px}
+ .hero .actions .btn{padding:11px 6px;gap:5px;font-size:.7rem;min-height:46px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+@media(max-width:760px){
+ :root{--page:calc(100% - 36px)}
+ .nav-inner{min-height:60px;gap:10px}.brand{font-size:.96rem}.nav-links{gap:13px}.nav-links a{font-size:.58rem;letter-spacing:.04em}.nav-links a:not(.nav-cta){display:none}.nav-cta{padding:9px 11px}
+ .hero{min-height:auto;padding:54px 0 74px}.hero-grid{grid-template-columns:1fr;gap:42px}.hero h1{font-size:clamp(3.8rem,17vw,7rem);margin:20px 0}.hero-lede{font-size:1rem;max-width:36ch}.hero-photo{width:min(78%,340px);justify-self:center;margin:0 12px 12px 0}.hero-photo img{aspect-ratio:4/4.6}.photo-note{left:-22px;bottom:18px;max-width:170px;padding:11px 12px}.scroll-note{left:18px;bottom:18px}
+ .section-head{grid-template-columns:1fr;gap:17px;margin-bottom:32px}.section-label{padding-top:0}h2{font-size:clamp(2.6rem,12vw,4.4rem)}
+ .story-grid,.impact-grid,.surprise-grid{grid-template-columns:1fr;gap:30px}.story-big{font-size:clamp(2.2rem,9vw,3.5rem)}.story-text{font-size:.98rem}.timeline{grid-template-columns:1fr;gap:10px;margin-top:36px}.moment{min-height:150px;padding:20px}.moment h3{margin-top:18px}
+ .impact-photo{width:calc(100% - 12px);max-width:440px;margin:0 auto 8px}.impact-copy h2{font-size:clamp(2.7rem,12vw,4.4rem)}
+ .gallery-head{display:block}.gallery-head p{margin-top:18px}.gallery-grid{grid-template-columns:1fr 1fr;gap:12px}.gallery-card:nth-child(2){margin-top:34px}.gallery-card:nth-child(3){grid-column:1/-1;width:72%;margin:12px auto 0}.gallery-card:nth-child(3) img{aspect-ratio:4/3;object-position:center 30%}
+ .birthday h2{font-size:clamp(3.3rem,15vw,6rem)}.birthday p{font-size:.98rem}.surprise-grid{gap:20px}.surprise .btn{justify-self:start;width:100%;max-width:340px}
+ .footer-inner{align-items:flex-start;flex-direction:column;gap:9px}
+}
+@media(max-width:380px){
+ :root{--page:calc(100% - 28px)}
+ .nav-inner{min-height:56px}.brand{font-size:.88rem}.nav-cta{font-size:.55rem;padding:8px 9px}
+ .hero h1{font-size:3.45rem}.hero-photo{width:80%}.photo-note{left:-12px}
+ .gallery-grid{gap:8px}.gallery-card:nth-child(3){width:85%}
+}
+</style>
+</head>
+<body>
+<nav class="site-nav" aria-label="Main navigation">
+ <div class="nav-inner">
+  <a class="brand" href="#top">BIG <span>VINCI.</span></a>
+  <div class="nav-links">
+   <a href="#the-walk">The story</a><a href="#impact">The impact</a><a class="nav-cta" href="#surprise">One more thing ↗</a>
+  </div>
+ </div>
+</nav>
+<main id="top">
+<section class="hero">
+ <div class="wrap hero-grid">
+  <div class="hero-copy">
+   <div class="kicker">A birthday story, made with love</div>
+   <h1>It started<br>with <em>a walk.</em></h1>
+   <p class="hero-lede">One night on campus. One conversation about a dream. And a brother who helped turn that dream into a door worth walking through.</p>
+   <div class="actions"><a class="btn btn-primary" href="#the-walk">Read our story <span aria-hidden="true">↘</span></a><a class="btn btn-ghost" href="#birthday">Skip to the wishes</a></div>
+  </div>
+  <figure class="hero-photo">
+   <img src="img/hero.webp" alt="Big Vinci smiling in a portrait" fetchpriority="high">
+   <figcaption class="photo-note"><small>For the one who showed up</small><strong>Big Vinci, this is for you.</strong></figcaption>
+  </figure>
+ </div>
+ <div class="scroll-note">Scroll slowly · There's a story here</div>
+</section>
+<section class="section story" id="the-walk">
+ <div class="wrap">
+  <div class="section-head reveal"><div class="section-label">01 / The beginning</div><h2>Some doors open<br>with <em>a simple walk.</em></h2></div>
+  <div class="story-grid">
+   <p class="story-big reveal">“That night, you asked me to take a walk around school. You probably had no idea how much that little moment would mean to me.”</p>
+   <div class="story-text reveal">
+    <p>We walked, we talked, and I told you about something I wanted to become: Chief Judge of SUG at FUNAAB.</p>
+    <p>The next morning, I woke up to a screenshot and a message. You had already reached out to the Chief Justice. All I had to do was introduce myself as the guy from Davinci.</p>
+    <p>That was more than a connection. It was someone taking my ambition seriously enough to help me move towards it.</p>
+    <blockquote class="pullquote">You didn't just tell me to dream bigger. You helped me take a step.</blockquote>
+   </div>
+  </div>
+  <div class="timeline">
+   <article class="moment reveal"><span class="num">01 — THE WALK</span><div><h3>A conversation</h3><p>A simple invitation became the beginning of a bond I value deeply.</p></div></article>
+   <article class="moment reveal"><span class="num">02 — THE NEXT MORNING</span><div><h3>A door opened</h3><p>You made a connection that helped me step into a role I had only just told you I wanted.</p></div></article>
+   <article class="moment reveal"><span class="num">03 — SINCE THEN</span><div><h3>A smoother journey</h3><p>New people, new perspectives, more confidence — and a big brother in my corner.</p></div></article>
+  </div>
+ </div>
+</section>
+<section class="section impact" id="impact">
+ <div class="wrap impact-grid">
+  <figure class="impact-photo reveal"><img src="img/impact.webp" alt="Big Vinci outdoors on campus" loading="lazy"></figure>
+  <div class="impact-copy reveal">
+   <div class="kicker">02 / The impact</div>
+   <h2>More than<br>a <em>connection.</em></h2>
+   <p>Since then, I've met people I might not have had the chance to meet so easily. I've been encouraged to do more, to try things, and to believe that I can find my feet in rooms that once felt far away.</p>
+   <p>Your advice has made things clearer. Your support has made the hectic parts feel less heavy. And your willingness to help has made this university journey smoother in ways I can't fully put into words.</p>
+   <p class="impact-statement">“It means a lot to know I don't have to figure everything out alone.”</p>
+  </div>
+ </div>
+</section>
+<section class="section gallery">
+ <div class="wrap">
+  <div class="gallery-head reveal"><div><div class="section-label">03 / The person behind the name</div><h2 style="margin-top:18px">Big energy.<br><em>Good heart.</em></h2></div><p>The entertainer, the personality, the big bro. A little space to celebrate the person you are — and the difference you've made to someone coming up behind you.</p></div>
+  <div class="gallery-grid">
+   <figure class="gallery-card reveal"><img src="img/g1.webp" alt="Big Vinci in a white shirt and tie" loading="lazy"><figcaption>The presence</figcaption></figure>
+   <figure class="gallery-card reveal"><img src="img/g2.webp" alt="Big Vinci in a playful portrait" loading="lazy"><figcaption>The personality</figcaption></figure>
+   <figure class="gallery-card reveal"><img src="img/g3.webp" alt="Big Vinci performing on stage" loading="lazy"><figcaption>The performer</figcaption></figure>
+  </div>
+ </div>
+</section>
+<section class="birthday" id="birthday">
+ <div class="wrap birthday-inner reveal">
+  <div class="kicker" style="justify-content:center">Today, we celebrate you</div>
+  <h2>Happy birthday,<br><span>Big Vinci.</span></h2>
+  <p>Thank you for the advice, the encouragement, the introductions, the doors opened, and the steady hand along the way. Thank you for seeing something in me and helping me take it seriously. I pray this new year brings you the same kind of open doors, genuine people, meaningful opportunities and joy that you've helped bring into my journey.</p>
+  <p class="signature">With gratitude, always.</p>
+ </div>
+</section>
+<section class="surprise" id="surprise">
+ <div class="wrap surprise-grid">
+  <div>
+   <div class="section-label">04 / One more thing</div>
+   <h2>Now, let's celebrate <em>your world.</em></h2>
+   <p>You've helped me find my way through new doors. Here's a little invitation to step back into yours — your work, your craft, and everything you're building.</p>
+  </div>
+  <a class="btn" href="https://comediandavincicfrn.pxxl.click" target="_blank" rel="noopener noreferrer">Explore Big Vinci's portfolio <span aria-hidden="true">↗</span></a>
+ </div>
+</section>
+</main>
+<footer><div class="wrap footer-inner"><span>Made with gratitude, not just code.</span><strong>For Big Vinci. <span style="color:var(--orange)">Always.</span></strong></div></footer>
+<script>
+(function(){
+ const items=document.querySelectorAll('.reveal');
+ if(!('IntersectionObserver' in window)){items.forEach(el=>el.classList.add('is-visible'));return;}
+ const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}});
+ },{threshold:.12,rootMargin:'0px 0px -35px 0px'});
+ items.forEach(el=>observer.observe(el));
+})();
+</script>
+<script>
+if('serviceWorker' in navigator){window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{});});}
+</script>
+</body>
+</html>
